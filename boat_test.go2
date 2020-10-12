@@ -13,3 +13,16 @@ func TestLast(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestReverse(t *testing.T) {
+	reversed := Reverse([]string{"foo", "bar", "baz"})
+	if reversed[0] != "baz" {
+		t.Fail()
+	}
+	if reversed[1] != "bar" {
+		t.Fail()
+	}
+	if reversed[2] != "foo" {
+		t.Fail()
+	}
+}

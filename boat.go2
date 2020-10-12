@@ -17,3 +17,11 @@ func Last[T any](array []T) *T {
 	}
 	return &array[len(array)-1]
 }
+
+func Reverse[T any](array []T) []T {
+	reversed := make([]T, len(array))
+	for i := range array {
+		reversed[i] = array[len(array)-1-i]
+	}
+	return reversed
+}
