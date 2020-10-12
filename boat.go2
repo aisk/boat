@@ -1,0 +1,19 @@
+package boat
+
+func Head[T any](array []T) *T {
+	if len(array) == 0 {
+		return nil
+	}
+	return &array[0]
+}
+
+func First[T any](array []T) *T {
+	return Head(array)
+}
+
+func Last[T any](array []T) *T {
+	if len(array) == 0 {
+		return nil
+	}
+	return &array[len(array)-1]
+}
