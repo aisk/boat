@@ -34,3 +34,23 @@ func Includes[T comparable](array []T, value T) bool {
 	}
 	return false
 }
+
+func Keys[T1 comparable, T2 any](dict map[T1]T2) []T1 {
+	keys := make([]T1, len(dict))
+	i := 0
+	for k, _ := range dict {
+		keys[i] = k
+		i += 1
+	}
+	return keys
+}
+
+func Values[T1 comparable, T2 any](dict map[T1]T2) []T2 {
+	values := make([]T2, len(dict))
+	i := 0
+	for _, v := range dict {
+		values[i] = v
+		i += 1
+	}
+	return values
+}
