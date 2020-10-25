@@ -26,3 +26,12 @@ func TestReverse(t *testing.T) {
 		t.Fail()
 	}
 }
+
+func TestIncludes(t *testing.T) {
+	if !Inclues([]string{"foo", "bar"}, "foo") {
+		t.Fail()
+	}
+	if Inclues([]string{"foo", "bar"}, "baz") {
+		t.Fail()
+	}
+}
