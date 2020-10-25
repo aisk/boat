@@ -26,7 +26,7 @@ func Reverse[T any](array []T) []T {
 	return reversed
 }
 
-func Includes[T any](array []T, value T) bool {
+func Includes[T comparable](array []T, value T) bool {
 	for _, a := range array {
 		if a == value {
 			return true
