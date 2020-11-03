@@ -7,6 +7,17 @@ func Head[T any](array []T) *T {
 	return &array[0]
 }
 
+func Tail[T any](array []T) []T {
+	result := []T{}
+	if len(array) == 0 {
+		return result
+	}
+	for i:=1; i<len(array); i++ {
+		result = append(result, array[i])
+	}
+	return result
+}
+
 func First[T any](array []T) *T {
 	return Head(array)
 }
