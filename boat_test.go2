@@ -16,6 +16,11 @@ func TestTail(t *testing.T) {
 	if result[0] != "bar" || result[1] != "baz" {
 		t.Fail()
 	}
+
+	result = Tail([]string{})
+	if len(result) != 0 {
+		t.Fail()
+	}
 }
 
 func TestLast(t *testing.T) {
