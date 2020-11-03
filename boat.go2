@@ -35,6 +35,20 @@ func Includes[T comparable](array []T, value T) bool {
 	return false
 }
 
+func Uniq[T comparable](array []T) []T {
+	set := make(map[T]struct{})
+	for _, a := range array {
+		set[a] = struct{}{}
+	}
+	result := make([]T, len(set))
+	i := 0
+	for a, _ := range set {
+		result[i] = a
+		i ++
+	}
+	return result
+}
+
 func Keys[T1 comparable, T2 any](dict map[T1]T2) []T1 {
 	keys := make([]T1, len(dict))
 	i := 0

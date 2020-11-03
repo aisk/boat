@@ -36,6 +36,13 @@ func TestIncludes(t *testing.T) {
 	}
 }
 
+func TestUniq(t *testing.T) {
+	result := Uniq([]string{"foo", "bar", "foo"})
+	if len(result) != 2 {
+		t.Fail()
+	}
+}
+
 func TestKeys(t *testing.T) {
 	keys := Keys(map[string]int{"foo": 1, "bar": 2, "baz": 3})
 	if len(keys) != 3 || keys[0] != "foo" || keys[1] != "bar" || keys[2] != "baz" {
