@@ -1,6 +1,8 @@
 package boat
 
-import "testing"
+import (
+	"testing"
+)
 
 func TestHead(t *testing.T) {
 	if *Head([]string{"foo", "bar"}) != "foo" {
@@ -60,14 +62,14 @@ func TestUniq(t *testing.T) {
 
 func TestKeys(t *testing.T) {
 	keys := Keys(map[string]int{"foo": 1, "bar": 2, "baz": 3})
-	if len(keys) != 3 || keys[0] != "foo" || keys[1] != "bar" || keys[2] != "baz" {
+	if len(keys) != 3 || !Includes(keys, "foo") || !Includes(keys, "bar") || !Includes(keys, "baz") {
 		t.Fail()
 	}
 }
 
 func TestValues(t *testing.T) {
 	values := Values(map[string]int{"foo": 1, "bar": 2, "baz": 3})
-	if len(values) != 3 || values[0] != 1 || values[1] != 2 || values[2] != 3 {
+	if len(values) != 3 || !Includes(values, 1) || !Includes(values, 2) || !Includes(values, 3) {
 		t.Fail()
 	}
 }
